@@ -1,24 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <link rel="stylesheet" href="/styles.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <title>js-question</title>
+  </head>
+  <body>
+    <div class="d-flex justify-content-center flex gap-40px">
+      <p id="reverse_count"></p>
+      <p id="even"></p>
+      <p id="sum"></p>
 
-<head>
-    <meta charset="utf-8">
+      <div>
+        <button onclick="Multi()">Click to enter a number.</button>
+        <p id="Multi"></p>
+      </div>
+    </div>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Loop</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-</head>
+    <script>
+      // reverse number 10 to 1
+      let b = "";
+      for (let a = 10; a > 0; a--) {
+        b = b + a + "<br>";
+        document.getElementById("reverse_count").innerHTML =
+          "Reverse counting 10 to 1 : " + "<br>" + b;
+      }
+      // sum of numbers 1 to 10
+      let a = 0;
+      for (let b = 1; b < 11; b++) {
+        a = a + b;
+        document.getElementById("sum").innerHTML =
+          "Sum of numbers from 1 to 10 : " + a;
+      }
 
-<body>
-
-<div id="loop_line" class="text-center"></div>
-
-    <script src="./assets/js/app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
-</body>
-
+      // Multiplication Multi
+      function Multi() {
+        let number = prompt(" Enter a number");
+        if (isNaN(number)) {
+          document.getElementById("Multi").innerHTML = " Enter a number.";
+        } else {
+          let c = "";
+          for (let i = 1; i < 11; i++) {
+            let b = number + " * " + i + " = " + number * i;
+            c = c + b + "<br>";
+            console.log(c);
+            document.getElementById("Multi").innerHTML = c;
+          }
+        }
+      }
+      // print even numbers
+      let x = "";
+      for (let y = 1; y < 22; y++) {
+        if (y % 2 == 0) {
+          x = x + y + "<br>";
+          document.getElementById("even").innerHTML =
+            "Even numbers  1 to 20" + "<br>" + x;
+        }
+      }
+    </script>
+  </body>
 </html>
